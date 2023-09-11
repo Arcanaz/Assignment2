@@ -20,27 +20,21 @@ class Assignment2:
         year_str = str(self.year)  # Convert the year to its text representation
         first_two_chars = year_str[:2] * n  # Repeat the first two characters n times
         
-        multiply_by_n = year_str * n
+        year_multiplied = self.year * n
+        print(year_multiplied)
+
+        year_multiplied_str = str(year_multiplied)
         
-        # Initialize variables to store the result and index for every other digit
-        result = ""
-        add_every_other_num = 0
-        
-        for i in range(len(multiply_by_n)):
-            # Check if the current index is even (0-based index)
+        result = ""  # Initialize result as an empty string
+
+        for i in range(len(year_multiplied_str)):
             if i % 2 == 0:
-                # Add the digit to the result string
-                add_every_other_num += int(multiply_by_n[i])
+                result += year_multiplied_str[i]
 
+        print(result)
 
-        
-        # Convert add_every_other_num back to a string
-        add_every_other_num = str(add_every_other_num)
-        
-        
-        # Print the final result
-        result = first_two_chars + add_every_other_num  # Concatenate the two parts 
-        return result
+        return first_two_chars + result  # Concatenate the two parts and return
+
 
     @staticmethod
     def checkGoodString(string):
